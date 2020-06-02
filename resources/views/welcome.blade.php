@@ -2,6 +2,12 @@
 
 
 @section("content")
+
+@if (Auth::check())
+    ようこそ {{Auth::user()->name}} さん!
+    
+
+@else
 <div class = "center jumbtron">
     <div class = "text-center">
         <h1>Welcome to the Microposts </h1>
@@ -9,5 +15,6 @@
     </div>
     
 </div>
+@endif
 
 @endsection
