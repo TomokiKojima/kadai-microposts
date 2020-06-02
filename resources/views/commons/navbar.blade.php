@@ -10,14 +10,14 @@
                 <ul class="navbar-nav">
                     
                 @if(Auth::check())
-                <li class = "nav-item"><a href = "#" class = "nav-link">Users</a></li>
+                <li class = "nav-item"><a href = "users.index" class = "nav-link">Users</a></li>
                 <li class = "nav-item dropdown">
                     
                     {{--トグルのメニューを展開するためのボタン--}}
                     <a href = "#" class = "nav-link dropdown-toggle" data-toggle ="dropdown" >{{Auth::user()->name}}</a> 
                     <ul class = "dropdown-menu dropdown-menu-right">
                         
-                        <li class = "dropdown-item"><a href="#">My Profile</a></li>
+                        <li class = "dropdown-item">{!! link_to_route("users.show","Profile",["user"=> Auth::id()]) !!}</li>
                         <li class = "dropdown-divider"></li>
                         <li class = "dropdown-item">{!! link_to_route("logout.get","LogOut") !!}</li>
                         
