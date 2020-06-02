@@ -22,12 +22,22 @@
         <ul class = "nav nav-tabs nav-justified mb-3">
             
             
-            <li class = "nav-item" ><a href="#" class = "nav-link">Time Line</a></li>
+            <li class = "nav-item" >
+                <a href="{{route("users.show",["user"=>$user->id])}}" class = "nav-link {{Request::routeIs("users.show") ? "active":"" }} ">
+                    Time Line
+                    <span class="badge badge-secondary">{{ $user->microposts_count }}</span>
+
+                </a>
+            </li>
             <li class = "nav-item" ><a href="#" class = "nav-link">Following</a></li>
             <li class = "nav-item" ><a href="#" class = "nav-link">Follower</a></li>
             
         </ul>
         
+        @if (Auth::id() == $user->id)
+        @include("microposts.form")
+        @endif
+        @include("microposts.microposts")
         
     </div>
     
