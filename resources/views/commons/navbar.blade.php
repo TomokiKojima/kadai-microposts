@@ -10,7 +10,7 @@
                 <ul class="navbar-nav">
                     
                 @if(Auth::check())
-                <li class = "nav-item"><a href = "users.index" class = "nav-link">Users</a></li>
+                <li class = "nav-item"> {!! link_to_route("users.index","ユーザー一覧", [], ['class' => 'nav-link']) !!} </li>
                 <li class = "nav-item dropdown">
                     
                     {{--トグルのメニューを展開するためのボタン--}}
