@@ -42,6 +42,13 @@ class User extends Authenticatable
         
     }
     
+    public function favorites(){
+        return $this->belongsToMany(Micropost::class);
+        
+    }
+    
+    
+    
     public function feed_microposts(){
         $userIds = $this -> followings() ->pluck("users.id") -> toArray();
         $userIds[] = $this -> id;
