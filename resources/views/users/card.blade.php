@@ -7,6 +7,5 @@
         <img class = "rounded img-fluid" src="{{ Gravatar::get($user->email, ['size' => 500]) }}"></img>
         
     </div>
-    
 </div>
 @include("user_follow.follow_button")
