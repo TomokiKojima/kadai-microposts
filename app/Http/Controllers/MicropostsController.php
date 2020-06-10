@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
+use Storage;
 class MicropostsController extends Controller
 {
 
@@ -27,10 +28,29 @@ class MicropostsController extends Controller
             "content"=>"required|max:255",
             
             ]);
-     $request->user()->microposts()->create([
-         "content" => $request ->content
-         ]) ;
-         return back();
+      
+// dd($request->user()->microposts());
+        $mp =  $request->user()->microposts()->create([
+                     "content" => $request ->content
+                    
+                     ]) ;
+      
+        if ($request->images != null){
+      
+           foreach($request->images as $image ){
+           // $path = Storage::disk('s3')->putFile('images', $image,"public");
+            // $path = Storage::disk('s3')->url($path);
+               
+                $path = $image->store('public');
+                $path = explode("/",$path)[1];
+               $mp->micropost_images()->create(["image_path" => $path]);
+            //   dd($path);
+           }
+        }
+        // dd($request->images);
+        //dd($path);
+        // dd($mp);
+        return back();
         
     }
     public function destroy($id){

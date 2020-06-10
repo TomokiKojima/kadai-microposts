@@ -7,7 +7,11 @@
             </div>
             <div>
                 <p class = "mb-0"> {!! nl2br(($micropost->content)) !!}</p>
+             @include("microposts.micropost_images")
+             
+             
                 
+                <!--                 <p class = "mb-0">   <img src="{!! $micropost->image_path  !!} "></p> -->
             </div>
             <div class = "row mt-3">
                 <div  class = "col-sm-2">
