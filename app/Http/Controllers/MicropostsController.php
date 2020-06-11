@@ -24,12 +24,12 @@ class MicropostsController extends Controller
     }
     
     public function store(Request $request){
-        $request->validate([
+        $validations = [
             "content"=>"required|max:255",
-            
-            ]);
+            ];
+        $request->validate($validations);
       
-// dd($request->user()->microposts());
+               dd($request);
         $mp =  $request->user()->microposts()->create([
                      "content" => $request ->content
                     
@@ -41,8 +41,12 @@ class MicropostsController extends Controller
            // $path = Storage::disk('s3')->putFile('images', $image,"public");
             // $path = Storage::disk('s3')->url($path);
                
+
                 $path = $image->store('public');
                 $path = explode("/",$path)[1];
+                
+                
+                
                $mp->micropost_images()->create(["image_path" => $path]);
             //   dd($path);
            }

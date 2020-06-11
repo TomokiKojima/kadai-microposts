@@ -1,0 +1,7 @@
+.img-thumbnail{
+    width: 325px; 
+    height: 325px;
+    object-fit: cover;
+    margin-top: 10px;
+   
+}

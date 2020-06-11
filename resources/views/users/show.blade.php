@@ -11,7 +11,7 @@
       @include("users.navtabs")
         
         @if (Auth::id() == $user->id)
-        @include("microposts.form")
+          @include("microposts.form")
         @endif
         @include("microposts.microposts")
         
