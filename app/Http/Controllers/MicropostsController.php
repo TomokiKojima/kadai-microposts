@@ -7,8 +7,6 @@ use App\Post;
 use Storage;
 class MicropostsController extends Controller
 {
-
-    //
     
     public function index(){
         $data = [];
@@ -29,7 +27,6 @@ class MicropostsController extends Controller
             ];
         $request->validate($validations);
       
-               dd($request);
         $mp =  $request->user()->microposts()->create([
                      "content" => $request ->content
                     
