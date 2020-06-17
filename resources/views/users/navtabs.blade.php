@@ -3,7 +3,7 @@
             
             <li class = "nav-item" >
                 <a href="{{route("users.show",["user"=>$user->id])}}" class = "nav-link {{Request::routeIs("users.show") ? "active":"" }} ">
-                    Time Line
+                    自分の投稿
                     <span class="badge badge-secondary">{{ $user->microposts_count }}</span>
 
                 </a>

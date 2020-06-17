@@ -11,7 +11,7 @@
             
                 <img class="d-block center-block w-100"　 
                 style = "height:auto; max-height:740px;width:80%; "
-                src="{!! asset('storage/'.$image->image_path) !!}" 
+                src="{!!  $image->image_path !!}" 
                 alt="この画像は表示できません"   >
             </div>　
             @endforeach

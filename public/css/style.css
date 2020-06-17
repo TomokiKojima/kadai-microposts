@@ -5,3 +5,9 @@
     margin-top: 10px;
    
 }
+
+.btn-unfollow:hover{
+    background-color: red;
+    
+}
+

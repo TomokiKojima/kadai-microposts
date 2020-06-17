@@ -3,7 +3,27 @@
         <div class = "media-body">
             <div>
                 {!! link_to_route("users.show",$micropost->user->name,["user" => $micropost->user->id]) !!}
-                <span class = "text-muted" >posted at {{$micropost->created_at }} </span>
+             
+                <span class = "text-muted" >posted at
+                
+                <?php
+                $posted_time =$micropost->created_at;
+                 $diff = time() - strtotime($posted_time); ?>
+
+                @if ( $diff< 60) 
+                 {{ $diff}}秒前
+                 @elseif ($diff < 3600) 
+                 {{ intdiv($diff,60) }}分前
+                 @elseif ($diff < 86400) 
+                 {{ intdiv($diff,3600) }}時間前
+                 @else
+                 {{$posted_time}}
+                @endif
+                
+                </span>
+                
+            
+
             </div>
             <div>
                 <p class = "mb-0"> {!! nl2br(($micropost->content)) !!}</p>

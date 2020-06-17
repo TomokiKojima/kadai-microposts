@@ -9,7 +9,6 @@
             @include("users.navtabs")
             @include("users.users")
             
-            
         </div>
         
     </div>

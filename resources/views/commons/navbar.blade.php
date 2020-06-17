@@ -1,6 +1,9 @@
-<header class = "mb-4">
+
+<header class = "mb-4 sticky-top text-center " >
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">Microposts</a>
+            <div class = "container">
+
+        <a class="navbar-brand " href="/" style = "center">Microposts</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-bar" >
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,6 +27,7 @@
                         
                         
                     </ul>
+</div>
                     
                     
                     
@@ -32,14 +36,13 @@
                 
                 @else    
                     {{-- ユーザ登録ページへのリンク --}}
-                    <li class = "nav-item">{!! link_to_route("signup.get","SignUp",[],["class" => "nav-link"]) !!}</li>
+                    <li class = "nav-item mr-1">{!! link_to_route("signup.get","SignUp",[],["class" => "nav-link px-4 py-1","style" => "background:white;color:  #67c5ff; border-radius:15px;"]) !!}</li>
                     {{-- ログインページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route("login","Login",[],["class" => "nav-link"]) !!}</li>
+                    <li class="nav-item ml-1" >{!! link_to_route("login","Login",[],["class" => "nav-link px-4 py-1","style" => "background:white;color:  #67c5ff; border-radius:15px;"]) !!}</li>
                 
                 @endif
                 </ul>
             </div>
-        </div>
+</div>
     </nav>
-
 </header>
