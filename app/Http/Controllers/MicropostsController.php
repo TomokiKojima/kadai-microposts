@@ -39,9 +39,6 @@ class MicropostsController extends Controller
             $path = Storage::disk('s3')->url($path);
                
 
-                // $path = $image->store('public');
-                // $path = explode("/",$path)[1];
-                
                 
                 
                $mp->micropost_images()->create(["image_path" => $path]);
